@@ -82,7 +82,7 @@ const ChatWithHistory: FC<ChatWithHistoryProps> = ({
   }
 
   return (
-    <div className={`h-full flex bg-white ${className} ${isMobile && 'flex-col'}`}>
+    <div className={`h-full flex bg-white dark:bg-gray-900 ${className} ${isMobile && 'flex-col'}`}>
       {
         !isMobile && (
           <Sidebar />

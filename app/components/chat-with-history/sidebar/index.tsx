@@ -60,7 +60,7 @@ const Sidebar = () => {
   }, [showRename, handleRenameConversation, handleCancelRename])
 
   return (
-    <div className='shrink-0 h-full flex flex-col w-[240px] border-r border-r-gray-100'>
+    <div className='shrink-0 h-full flex flex-col w-[240px] border-r border-r-gray-100 dark:border-r-gray-800'>
       {
         !isMobile && (
           <div className='shrink-0 flex p-4'>
@@ -72,7 +72,7 @@ const Sidebar = () => {
               background={appData?.site?.icon_background}
               imageUrl={appData?.site?.icon_url}
             />
-            <div className='py-1 text-base font-semibold text-gray-800'>
+            <div className='py-1 text-base font-semibold text-gray-800 dark:text-gray-100'>
               {appData?.site?.title}
             </div>
           </div>
