@@ -71,7 +71,7 @@ export const fetchSuggestedQuestions = async (messageId: string) => {
   return get(`/messages/${messageId}/suggested`)
 }
 export const stopChatMessageResponding = async (taskId: string) => {
-  return post(`/chat-messages/${taskId}/stop`,)
+  return post(`/chat-messages/${taskId}/stop`)
 }
 export const renameConversation = async (conversationId: string, name: string) => {
   return post(`conversations/${conversationId}/name`, { body: { name } })
@@ -88,7 +88,7 @@ export const audioToText = (formData: any): Promise<{ text: string }> => {
     data: formData,
   }, '/audio-to-text')
 }
-
+// TODO 
 export const pinConversation = async (conversationId: string) => {
   return get('messages1', { params: { conversation_id: conversationId, limit: 20, last_id: '' } })
 }
