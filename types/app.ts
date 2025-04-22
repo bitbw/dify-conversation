@@ -17,6 +17,7 @@ import type { UploadFileSetting } from '@/app/components/workflow/types'
 export enum Theme {
   light = 'light',
   dark = 'dark',
+  system = 'system',
 }
 
 export enum ProviderType {
@@ -452,4 +453,80 @@ export type RetrievalConfig = {
       keyword_weight: number
     }
   }
+}
+
+export interface AppInfo {
+  app_id: string;
+  site: {
+    title?: string;
+    icon_type?: string;
+    icon?: string;
+    icon_background?: string;
+    icon_url?: string;
+    default_language?: string;
+    prompt_public?: boolean;
+    copyright?: string;
+    show_workflow_steps?: boolean;
+    use_icon_as_answer_icon?: boolean;
+  };
+  plan?: string;
+  // 其他必要的字段
+}
+
+export enum BlockEnum {
+  Start = 'start',
+  End = 'end',
+  Answer = 'answer',
+  LLM = 'llm',
+  KnowledgeRetrieval = 'knowledge-retrieval',
+  QuestionClassifier = 'question-classifier',
+  IfElse = 'if-else',
+  Code = 'code',
+  TemplateTransform = 'template-transform',
+  HttpRequest = 'http-request',
+  VariableAssigner = 'variable-assigner',
+  Tool = 'tool',
+}
+
+export type NodeTracing = {
+  id: string
+  index: number
+  predecessor_node_id: string
+  node_id: string
+  node_type: BlockEnum
+  title: string
+  inputs: any
+  process_data: any
+  outputs?: any
+  status: string
+  error?: string
+  elapsed_time: number
+  execution_metadata: {
+    total_tokens: number
+    total_price: number
+    currency: string
+  }
+  created_at: number
+  created_by: {
+    id: string
+    name: string
+    email: string
+  }
+  finished_at: number
+  extras?: any
+  expand?: boolean // for UI
+}
+
+export enum WorkflowRunningStatus {
+  Waiting = 'waiting',
+  Running = 'running',
+  Succeeded = 'succeeded',
+  Failed = 'failed',
+  Stopped = 'stopped',
+}
+
+export type WorkflowProcess = {
+  status: WorkflowRunningStatus
+  tracing: NodeTracing[]
+  expand?: boolean // for UI
 }
