@@ -4,7 +4,8 @@
   "private": true,
   "author": "Mars",
   "contributors": [
-    "<Mars> <<3586649@qq.com>> (https://github.com/marsDes)"
+    "<Mars> <<3586649@qq.com>> (https://github.com/marsDes)",
+    "<bitbw> <<mail.bitbw@gmail.com>> (https://github.com/bitbw)"
   ],
   "scripts": {
     "dev": "next dev",
@@ -56,7 +57,6 @@
     "classnames": "^2.5.1",
     "copy-to-clipboard": "^3.3.3",
     "dayjs": "^1.11.13",
-    "dify-client-plus": "^1.0.5",
     "echarts-for-react": "^3.0.2",
     "emoji-mart": "^5.6.0",
     "eslint": "^9.18.0",
@@ -76,6 +76,7 @@
     "mime": "^4.0.6",
     "negotiator": "^1.0.0",
     "next": "^15.1.5",
+    "next-themes": "^0.4.3",
     "rc-textarea": "^1.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

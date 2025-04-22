@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server'
-import { ChatClient } from 'dify-client-plus'
+import { ChatClient } from './dify-client'
 import { v4 } from 'uuid'
 import { API_KEY, API_URL, APP_ID } from '@/config'
 
