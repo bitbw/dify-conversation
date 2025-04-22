@@ -13,7 +13,7 @@ import AgentContent from './agent-content'
 import BasicContent from './basic-content'
 import SuggestedQuestions from './suggested-questions'
 import More from './more'
-import WorkflowProcessItem from './workflow-process'
+import WorkflowProcessItem from '@/app/components/workflow/workflow-process'
 import LoadingAnim from '@/app/components/chat/loading-anim'
 import Citation from '@/app/components/chat/citation'
 // TODO mars
