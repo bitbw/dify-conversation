@@ -8,7 +8,7 @@
     "<bitbw> <<mail.bitbw@gmail.com>> (https://github.com/bitbw)"
   ],
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 3300",
     "build": "next build --turbopack",
     "start": "next start --turbopack",
     "lint": "next lint",
