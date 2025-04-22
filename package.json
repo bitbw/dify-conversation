@@ -8,9 +8,9 @@
     "<bitbw> <<mail.bitbw@gmail.com>> (https://github.com/bitbw)"
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start --turbopack",
     "lint": "next lint",
     "fix": "next lint --fix",
     "eslint-fix": "eslint . --fix",
