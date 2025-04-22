@@ -67,13 +67,13 @@ const Sidebar = () => {
             <AppIcon
               className='mr-3'
               size='small'
-              iconType={appData?.site.icon_type}
-              icon={appData?.site.icon}
-              background={appData?.site.icon_background}
-              imageUrl={appData?.site.icon_url}
+              iconType={appData?.site?.icon_type}
+              icon={appData?.site?.icon}
+              background={appData?.site?.icon_background}
+              imageUrl={appData?.site?.icon_url}
             />
             <div className='py-1 text-base font-semibold text-gray-800'>
-              {appData?.site.title}
+              {appData?.site?.title}
             </div>
           </div>
         )
@@ -116,9 +116,9 @@ const Sidebar = () => {
           )
         }
       </div>
-      {appData?.site.copyright && (
+      {appData?.site?.copyright && (
         <div className='px-4 pb-4 text-xs text-gray-400'>
-          © {(new Date()).getFullYear()} {appData?.site.copyright}
+          © {(new Date()).getFullYear()} {appData?.site?.copyright}
         </div>
       )}
       {!!showConfirm && (

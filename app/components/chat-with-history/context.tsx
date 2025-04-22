@@ -75,5 +75,6 @@ export const ChatWithHistoryContext = createContext<ChatWithHistoryContextValue>
   isInstalledApp: false,
   handleFeedback: () => { },
   currentChatInstanceRef: { current: { handleStop: () => { } } },
+  appData: { site: { title: '', icon_url: '', description: '' } } as any,
 })
 export const useChatWithHistoryContext = () => useContext(ChatWithHistoryContext)

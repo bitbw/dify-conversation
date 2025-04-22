@@ -140,12 +140,12 @@ const ChatWrapper = () => {
     isMobile,
   ])
 
-  const answerIcon = (appData?.site && appData.site.use_icon_as_answer_icon)
+  const answerIcon = (appData?.site && appData.site?.use_icon_as_answer_icon)
     ? <AnswerIcon
-      iconType={appData.site.icon_type}
-      icon={appData.site.icon}
-      background={appData.site.icon_background}
-      imageUrl={appData.site.icon_url}
+      iconType={appData.site?.icon_type}
+      icon={appData.site?.icon}
+      background={appData.site?.icon_background}
+      imageUrl={appData.site?.icon_url}
     />
     : null
 
@@ -171,7 +171,7 @@ const ChatWrapper = () => {
         onFeedback={handleFeedback}
         suggestedQuestions={suggestedQuestions}
         answerIcon={answerIcon}
-        hideProcessDetail
+        hideProcessDetail={false}
         themeBuilder={themeBuilder}
         switchSibling={siblingMessageId => setTargetMessageId(siblingMessageId)}
       />

@@ -43,19 +43,19 @@ const ConfigPanel = () => {
               <>
                 <div className='flex items-center h-8 text-2xl font-semibold text-gray-800'>
                   <AppIcon
-                    iconType={appData?.site.icon_type}
-                    icon={appData?.site.icon}
+                    iconType={appData?.site?.icon_type}
+                    icon={appData?.site?.icon}
                     background='transparent'
-                    imageUrl={appData?.site.icon_url}
+                    imageUrl={appData?.site?.icon_url}
                     size='small'
                     className="mr-2"
                   />
-                  {appData?.site.title}
+                  {appData?.site?.title}
                 </div>
                 {
-                  appData?.site.description && (
+                  appData?.site?.description && (
                     <div className='mt-2 w-full text-sm text-gray-500'>
-                      {appData?.site.description}
+                      {appData?.site?.description}
                     </div>
                   )
                 }

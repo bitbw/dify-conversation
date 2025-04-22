@@ -79,10 +79,10 @@ export const useChatWithHistory = (installedAppInfo?: InstalledApp) => {
 
   useAppFavicon({
     enable: !installedAppInfo,
-    icon_type: appInfo?.site.icon_type,
-    icon: appInfo?.site.icon,
-    icon_background: appInfo?.site.icon_background,
-    icon_url: appInfo?.site.icon_url,
+    icon_type: appInfo?.site?.icon_type,
+    icon: appInfo?.site?.icon,
+    icon_background: appInfo?.site?.icon_background,
+    icon_url: appInfo?.site?.icon_url,
   })
 
   const appData = useMemo(() => {
@@ -110,8 +110,8 @@ export const useChatWithHistory = (installedAppInfo?: InstalledApp) => {
   const appId = useMemo(() => appData?.app_id, [appData])
 
   useEffect(() => {
-    if (appData?.site.default_language)
-      changeLanguage(appData.site.default_language)
+    if (appData?.site?.default_language)
+      changeLanguage(appData.site?.default_language)
   }, [appData])
 
   const [conversationIdInfo, setConversationIdInfo] = useLocalStorageState<Record<string, string>>(CONVERSATION_ID_INFO, {
