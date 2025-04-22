@@ -21,11 +21,11 @@ html[data-theme="light"] {
   --color-components-tooltip-bg: #FFFFFFF2;
 
   --color-components-button-primary-text: #FFFFFF;
-  --color-components-button-primary-bg: #155AEF;
+  --color-components-button-primary-bg: #00665f;
   --color-components-button-primary-border: #1018280A;
-  --color-components-button-primary-bg-hover: #004AEB;
+  --color-components-button-primary-bg-hover: #127369;
   --color-components-button-primary-border-hover: #10182814;
-  --color-components-button-primary-bg-disabled: #155AEF24;
+  --color-components-button-primary-bg-disabled: #95a6a2;
   --color-components-button-primary-border-disabled: #FFFFFF00;
   --color-components-button-primary-text-disabled: #FFFFFF99;
 
@@ -76,8 +76,8 @@ html[data-theme="light"] {
   --color-components-button-destructive-ghost-text-disabled: #F0443833;
   --color-components-button-destructive-ghost-bg-hover: #FEE4E2;
 
-  --color-components-button-secondary-accent-text: #155AEF;
-  --color-components-button-secondary-accent-text-disabled: #B2CAFF;
+  --color-components-button-secondary-accent-text: #006045;
+  --color-components-button-secondary-accent-text-disabled: #a4f4cf;
   --color-components-button-secondary-accent-bg: #FFFFFF;
   --color-components-button-secondary-accent-bg-hover: #F2F4F7;
   --color-components-button-secondary-accent-bg-disabled: #F9FAFB;

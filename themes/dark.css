@@ -21,11 +21,11 @@ html[data-theme="dark"] {
   --color-components-tooltip-bg: #18181BF2;
 
   --color-components-button-primary-text: #FFFFFFF2;
-  --color-components-button-primary-bg: #155AEF;
+  --color-components-button-primary-bg: #00665f;
   --color-components-button-primary-border: #FFFFFF1F;
-  --color-components-button-primary-bg-hover: #296DFF;
+  --color-components-button-primary-bg-hover: #127369;
   --color-components-button-primary-border-hover: #FFFFFF33;
-  --color-components-button-primary-bg-disabled: #FFFFFF08;
+  --color-components-button-primary-bg-disabled: #95a6a2;
   --color-components-button-primary-border-disabled: #FFFFFF14;
   --color-components-button-primary-text-disabled: #FFFFFF33;
 

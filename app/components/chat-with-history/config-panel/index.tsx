@@ -21,6 +21,7 @@ const ConfigPanel = () => {
   const [collapsed, setCollapsed] = useState(true)
   const customConfig = appData?.custom_config
   const site = appData?.site
+  
 
   return (
     <div className='flex flex-col max-h-[80%] w-full max-w-[720px]'>
@@ -28,13 +29,13 @@ const ConfigPanel = () => {
         className={`
           grow rounded-xl overflow-y-auto
           ${showConfigPanelBeforeChat && 'border-[0.5px] border-gray-100 shadow-lg'}
-          ${!showConfigPanelBeforeChat && collapsed && 'border border-indigo-100'}
+          ${!showConfigPanelBeforeChat && collapsed && 'border border-primary-100'}
           ${!showConfigPanelBeforeChat && !collapsed && 'border-[0.5px] border-gray-100 shadow-lg'}
         `}
       >
         <div
           className={`
-            flex flex-wrap px-6 py-4 rounded-t-xl bg-indigo-25
+            flex flex-wrap px-6 py-4 rounded-t-xl bg-primary-25
             ${isMobile && '!px-4 !py-3'}
           `}
         >
@@ -65,8 +66,8 @@ const ConfigPanel = () => {
           {
             !showConfigPanelBeforeChat && collapsed && (
               <>
-                <Star06 className='mr-1 mt-1 w-4 h-4 text-indigo-600' />
-                <div className='grow py-[3px] text-[13px] text-indigo-600 leading-[18px] font-medium'>
+                <Star06 className='mr-1 mt-1 w-4 h-4 text-primary-600' />
+                <div className='grow py-[3px] text-[13px] text-primary-600 leading-[18px] font-medium'>
                   {t('share.chat.configStatusDes')}
                 </div>
                 <Button
@@ -84,8 +85,8 @@ const ConfigPanel = () => {
           {
             !showConfigPanelBeforeChat && !collapsed && (
               <>
-                <Star06 className='mr-1 mt-1 w-4 h-4 text-indigo-600' />
-                <div className='grow py-[3px] text-[13px] text-indigo-600 leading-[18px] font-medium'>
+                <Star06 className='mr-1 mt-1 w-4 h-4 text-primary-600' />
+                <div className='grow py-[3px] text-[13px] text-primary-600 leading-[18px] font-medium'>
                   {t('share.chat.privatePromptConfigTitle')}
                 </div>
               </>
@@ -146,6 +147,7 @@ const ConfigPanel = () => {
               </div>
               : <div>
               </div>}
+             
             {
               customConfig?.remove_webapp_brand
                 ? null
@@ -153,11 +155,12 @@ const ConfigPanel = () => {
                   <div className={`flex items-center justify-end ${isMobile && 'w-full'}`}>
                     <div className='flex items-center pr-3 space-x-3'>
                       <span className='uppercase'>{t('share.chat.poweredBy')}</span>
-                      {
+                      <span>FUXI</span>
+                      {/* {
                         customConfig?.replace_webapp_logo
                           ? <img src={customConfig?.replace_webapp_logo} alt='logo' className='block w-auto h-5' />
                           : <LogoSite className='!h-5' />
-                      }
+                      } */}
                     </div>
                   </div>
                 )

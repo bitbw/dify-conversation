@@ -9,9 +9,10 @@ type LogoSiteProps = {
 const LogoSite: FC<LogoSiteProps> = ({
   className,
 }) => {
+  // TODO: 需要替换为正式的logo
   return (
     <img
-      src={'/logo/logo.png'}
+      src={'example.png'}
       className={classNames('block w-[22.651px] h-[24.5px]', className)}
       alt='logo'
     />
