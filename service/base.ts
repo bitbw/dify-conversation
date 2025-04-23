@@ -375,8 +375,10 @@ export const ssePost = (
     onNodeStarted,
     onNodeFinished,
     onError,
+    getAbortController,
   }: IOtherOptions,
 ) => {
+  const abortController = new AbortController()
   const options = Object.assign({}, baseOptions, {
     method: 'POST',
   }, fetchOptions)
@@ -387,6 +389,9 @@ export const ssePost = (
   const { body } = options
   if (body)
     options.body = JSON.stringify(body)
+
+  getAbortController?.(abortController)
+  options.signal = abortController.signal
 
   globalThis.fetch(urlWithPrefix, options)
     .then((res: any) => {

@@ -335,7 +335,8 @@ export const useChat = (
           if (isFirstMessage && newConversationId)
             conversationId.current = newConversationId
 
-          taskIdRef.current = taskId
+          if (taskId)
+            taskIdRef.current = taskId
           if (messageId)
             responseItem.id = messageId
 
@@ -483,7 +484,8 @@ export const useChat = (
           })
         },
         onWorkflowStarted: ({ workflow_run_id, task_id }) => {
-          taskIdRef.current = task_id
+          if (task_id)
+            taskIdRef.current = task_id
           responseItem.workflow_run_id = workflow_run_id
           responseItem.workflowProcess = {
             status: WorkflowRunningStatus.Running,
@@ -505,37 +507,9 @@ export const useChat = (
             parentId: data.parent_message_id,
           })
         },
-        onIterationStart: ({ data: iterationStartedData }) => {
-          responseItem.workflowProcess!.tracing!.push({
-            ...iterationStartedData,
-            status: WorkflowRunningStatus.Running,
-          } as any)
-          updateCurrentQAOnTree({
-            placeholderQuestionId,
-            questionItem,
-            responseItem,
-            parentId: data.parent_message_id,
-          })
-        },
-        onIterationFinish: ({ data: iterationFinishedData }) => {
-          const tracing = responseItem.workflowProcess!.tracing!
-          const iterationIndex = tracing.findIndex(item => item.node_id === iterationFinishedData.node_id
-            && (item.execution_metadata?.parallel_id === iterationFinishedData.execution_metadata?.parallel_id || item.parallel_id === iterationFinishedData.execution_metadata?.parallel_id))!
-          tracing[iterationIndex] = {
-            ...tracing[iterationIndex],
-            ...iterationFinishedData,
-            status: WorkflowRunningStatus.Succeeded,
-          } as any
-
-          updateCurrentQAOnTree({
-            placeholderQuestionId,
-            questionItem,
-            responseItem,
-            parentId: data.parent_message_id,
-          })
-        },
+    
         onNodeStarted: ({ data: nodeStartedData }) => {
-          if (nodeStartedData.iteration_id)
+          if (nodeStartedData.node_id)
             return
 
           responseItem.workflowProcess!.tracing!.push({
@@ -550,7 +524,7 @@ export const useChat = (
           })
         },
         onNodeFinished: ({ data: nodeFinishedData }) => {
-          if (nodeFinishedData.iteration_id)
+          if (nodeFinishedData.node_id)
             return
 
           const currentIndex = responseItem.workflowProcess!.tracing!.findIndex((item) => {
@@ -568,15 +542,10 @@ export const useChat = (
             parentId: data.parent_message_id,
           })
         },
-        onTTSChunk: (messageId: string, audio: string) => {
-          if (!audio || audio === '')
-            return
-          player.playAudioWithAudio(audio, true)
-          AudioPlayerManager.getInstance().resetMsgId(messageId)
+        getAbortController: (abortController: AbortController) => {
+          conversationMessagesAbortControllerRef.current = abortController
         },
-        onTTSEnd: (messageId: string, audio: string) => {
-          player.playAudioWithAudio(audio, false)
-        },
+
       })
     return true
   }, [

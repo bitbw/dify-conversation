@@ -81,6 +81,7 @@ const ChatWrapper = () => {
       'chat-messages',
       data,
       {
+        // onGetConversationMessages: (conversationId, getAbortController) => fetchConversationMessages(appId, conversationId, getAbortController),
         // onGetSuggestedQuestions: responseItemId => fetchSuggestedQuestions(responseItemId),  // client  流式请求完成后基础请求异常
         onConversationComplete: currentConversationId ? undefined : handleNewConversationCompleted,
         isPublicAPI: !isInstalledApp,
