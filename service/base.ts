@@ -59,6 +59,7 @@ export type NodeStartedResponse = {
   data: {
     id: string
     node_id: string
+    iteration_id?: string
     node_type: string
     index: number
     predecessor_node_id?: string
@@ -75,6 +76,7 @@ export type NodeFinishedResponse = {
   data: {
     id: string
     node_id: string
+    iteration_id?: string
     node_type: string
     index: number
     predecessor_node_id?: string
