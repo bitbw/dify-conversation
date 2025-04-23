@@ -6,6 +6,7 @@ import { ThemeProvider } from 'next-themes'
 
 import './styles/globals.css'
 import './styles/markdown.scss'
+import './styles/font.css';
 
 export const metadata: Metadata = {
   title: 'Dify',
