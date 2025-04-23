@@ -12,5 +12,14 @@ export async function POST(request: NextRequest) {
   } = body
   const { user } = getInfo(request)
   const res = await client.createChatMessage(inputs, query, user, responseMode, conversationId, files)
-  return new Response(res.data as any)
+  // 确保使用流式响应
+  const headers = new Headers({
+    'Cache-Control': 'no-cache',
+    'Content-Type': 'text/event-stream',
+    'X-Accel-Buffering': 'no',
+    'Connection': 'keep-alive',
+    'Transfer-Encoding': 'chunked',
+  })
+
+  return new Response(res.data, { headers })
 }
