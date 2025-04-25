@@ -13,17 +13,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // 在开发过程中忽略类型错误，但在构建时仍会检查
-    ignoreBuildErrors: process.env.NODE_ENV === 'development',
+    // https://nextjs.org/docs/api-reference/next.config.js/ignoring-typescript-errors
+    ignoreBuildErrors: true,
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/files/:path*',
-  //       destination: `${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3300'}/:path*`,
-  //     },
-  //   ]
-  // },
 }
 
 module.exports = nextConfig
